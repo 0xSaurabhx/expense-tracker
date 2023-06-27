@@ -1,4 +1,4 @@
-# Start
+# Hackathon Project
 
 Clone the project
 
