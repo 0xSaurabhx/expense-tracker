@@ -146,6 +146,7 @@ class Tracker extends Component {
                                     type={this.state.transactions[id].type}
                                     name={this.state.transactions[id].name}
                                     price={this.state.transactions[id].price}
+                                    user_id={this.state.transactions[id].user_id}
                                 />
                             ))
                         }

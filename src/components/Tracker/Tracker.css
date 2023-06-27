@@ -11,23 +11,25 @@
 }
 
 .welcome {
-    color: #fff;
+    color: #000000;
     display: flex;
+    font-weight: bold;
     justify-content: space-between;
     margin: 0;
-    text-shadow: 0px 5px 3px #292929;
+    text-shadow: 0px 5px 3px #ece5e5;
 }
 .totalMoney {
-    color: #fff;
-    font-size: 20px;
+    color: #000000;
+    font-size: 30px;
     margin:0 0 10px;
-    text-shadow: 0px 5px 3px #292929;
+    font-weight: bold;
+    text-shadow: 0px 5px 3px #f4e7e7;
 }
 
 .newTransaction {
     box-sizing: border-box;
     text-align: center;
-    color: #425f9c;
+    color: #f599b3;
     display: table;
     width: 100%;
     border-radius: 5px;
@@ -41,6 +43,7 @@
 
 .newTransaction input[type="text"],
 .newTransaction select{
+    margin: 10px 0 0;
     width: 100%;
     box-sizing: border-box;
     border: 1px solid #ddd;
@@ -60,18 +63,19 @@
 
 .addTransaction {
     text-align: center;
-    color: #ffffff;
+    font-weight: bold;
+    color: #000000;
     border-radius: 3px;
-    background-color: #425f9c;
+    background-color: #f599b3;
     border: 0;
-    margin: 5px 0 0;
+    margin: 30px 0 0;
     padding: 5px 10px;
     font-size: 15px;
     cursor: pointer;
 }
 
 .addTransaction:hover {
-    background-color: #274177;
+    background-color: #f599b3;
 }
 
 .addTransaction:focus{
