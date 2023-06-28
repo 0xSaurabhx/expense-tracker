@@ -101,8 +101,8 @@ class Tracker extends Component {
         return(
             <div className="trackerBlock">
                 <div className="welcome">
-                    <span>Hi, {currentUser.displayName}!</span>
-                    <button className="exit" onClick={this.logout}>Exit</button>
+                    <span>Hi, {currentUser.displayName}!👋</span>
+                    <button className="exit" onClick={this.logout}>Sign Out</button>
                 </div>
                 <div className="totalMoney">₹{this.state.money}</div>
 
@@ -138,7 +138,7 @@ class Tracker extends Component {
                 </div>
                 
                 <div className="latestTransactions">
-                    <p>Latest Transactions</p>
+                    <p>🕔 Latest Transactions</p>
                     <ul>
                         {
                             Object.keys(this.state.transactions).map((id) => (

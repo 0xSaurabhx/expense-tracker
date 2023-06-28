@@ -5,7 +5,7 @@ import Login from './Forms/Login';
 import Register from './Forms/Register';
 import Spinner from '../assets/loader.gif';
 import Tracker from './Tracker/Tracker';
-import Navbar from './Navbar';
+import Navbar from './Navbar/index';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 export default class Main extends Component {
@@ -17,6 +17,7 @@ export default class Main extends Component {
     componentDidMount(){
       this.authListener();
     }
+    
 
     authListener(){
       fire.auth().onAuthStateChanged((user) => {

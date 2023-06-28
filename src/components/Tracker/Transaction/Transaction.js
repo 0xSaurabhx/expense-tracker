@@ -4,14 +4,14 @@ import './Transaction.css'
 const Transaction = props => {
     return (
         <li>
-            <div>{props.name}</div>
+            <div>💰 {props.name}</div>
             <div className="uid">{props.user_id}</div>
             
             <div>{props.type === 'deposit' ? (
-                <span className="deposit"> + ₹{props.price} </span>
+                <span className="deposit"> + ₹{props.price} 📈</span>
             ) : (
                 <span className="expense">
-                    - ₹{props.price}
+                    - ₹{props.price} 📉
                 </span>
                 
             )}</div>
