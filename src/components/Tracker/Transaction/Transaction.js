@@ -1,11 +1,14 @@
 import React from 'react';
-import './Transaction.css'
+import './Transaction.css';
 
 const Transaction = props => {
+    
+
     return (
         <li>
             <div>💰 {props.name}</div>
             <div className="uid">{props.user_id}</div>
+            <div className="date">{props.transactionDate}</div>
             
             <div>{props.type === 'deposit' ? (
                 <span className="deposit"> + ₹{props.price} 📈</span>
@@ -15,6 +18,7 @@ const Transaction = props => {
                 </span>
                 
             )}</div>
+            
         </li>
     );
 }
