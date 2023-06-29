@@ -37,7 +37,7 @@ export default function Navbar()
               <a href="/about">About</a>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <a href="http://localhost:5173/">Tax Calculator</a>
             </li>
           </ul>
         </div>
