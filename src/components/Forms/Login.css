@@ -1,16 +1,18 @@
 .regField {
+    border-radius: 12px;
     width: 100%;
     background-color: #f7f7f7;
     color: #000;
-    border: 1px solid #ddd;
+    border: 5px solid #fff;
     padding: 15px;
     box-sizing: border-box;
     font-size: 15px;
 }
 
 .submitBtn {
+    border-radius: 12px;
     width: 100%;
-    background: #425f9c;
+    background: #f33458;
     border: 0;
     color: #fff;
     padding: 15px;
@@ -18,7 +20,6 @@
     font-size: 15px;
     cursor: pointer;
 }
-
 .underLine {
     text-align: center;
     margin: 7px 0 0 0;
@@ -42,4 +43,10 @@
 .linkBtn:focus,
 .submitBtn:focus{
     outline: none;
+}
+
+.showPasswordBtn{
+    margin-left: 285px;
+    background: none;
+    border: none;
 }

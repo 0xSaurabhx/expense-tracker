@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import fire from '../../config/Fire';
+import { FaEyeSlash,FaEye } from 'react-icons/fa';
 import './Login.css';
 
 class Login extends Component {
@@ -21,7 +22,15 @@ class Login extends Component {
         this.setState({[e.target.name]: e.target.value});
     }
 
+    toggleShowPassword = event => {
+        event.preventDefault()
+        this.setState(prevState => ({
+            showPassword: !prevState.showPassword
+        }));
+    };
+
     render() {
+        const { password, showPassword } = this.state;
 
         let errorNotification = this.state.fireErrors ? 
             ( <div className="Error"> {this.state.fireErrors} </div> ) : null;
@@ -41,11 +50,14 @@ class Login extends Component {
                     <input
                         className="regField"
                         placeholder="Pasword"
-                        value={this.state.password} 
+                        value={password}
                         onChange={this.handleChange}
                         name="password"
-                        type="password"
+                        type={showPassword ? 'text' : 'password'}
                     />
+                    <button className="showPasswordBtn" onClick={this.toggleShowPassword}>
+                            {showPassword ? <FaEyeSlash/> : <FaEye/>}
+                        </button>
                     <input className="submitBtn" type="submit" onClick={this.login} value="ENTER" />
                 </form>
             </>
