@@ -7,6 +7,7 @@ class Register extends Component {
         email: '',
         password: '',
         displayName: '',
+        showPassword: false,
         fireErrors: ''
     }
 
@@ -23,11 +24,18 @@ class Register extends Component {
         });
     }
 
+    toggleShowPassword = () => {
+        this.setState(prevState => ({
+            showPassword: !prevState.showPassword
+        }));
+    };
+
     handleChange = e => {
         this.setState({[e.target.name]: e.target.value});
     }
 
     render() {
+        const { password, showPassword } = this.state;
 
         let errorNotification = this.state.fireErrors ? 
             ( <div className="Error"> {this.state.fireErrors} </div> ) : null;
@@ -51,14 +59,19 @@ class Register extends Component {
                         onChange={this.handleChange}
                         name="email"
                         />
+                <div className="passwordField">
                     <input
                         className="regField"
                         placeholder="Pasword"
-                        value={this.state.password} 
+                        value={password}
                         onChange={this.handleChange}
                         name="password"
-                        type="password"
+                        type={showPassword ? 'text' : 'password'}
                     />
+                    <button className="showPasswordBtn" onClick={this.toggleShowPassword}>
+                            {showPassword ? 'Hide' : 'Show'}
+                        </button>
+                        </div>
                     <input className="submitBtn" type="submit" onClick={this.register} value="REGISTER" />
                 </form>
             </>
