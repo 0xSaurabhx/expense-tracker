@@ -4,6 +4,7 @@ import fire from "../../config/Fire";
 import Transaction from "./Transaction/Transaction";
 
 class Tracker extends Component {
+  
   state = {
     transactions: [],
     money: 0,
@@ -98,6 +99,7 @@ class Tracker extends Component {
       .catch((error) => {
         console.log("Error deleting transactions from Firebase: ", error);
       });
+      window.location.reload(false);
   };
 
   componentWillMount() {
@@ -128,20 +130,11 @@ class Tracker extends Component {
         this.setState({
           transactions: BackUpState,
           money: totalMoney,
+          date: BackUpState.date,
         });
       });
   }
-  deleteTransaction = (id) => {
-    const { currentUID } = this.props;
-    const transactionRef = fire.database().ref(`Transactions/${currentUID}/${id}`);
-    transactionRef.remove()
-      .then(() => {
-        console.log(transactionRef);
-      })
-      .catch((error) => {
-        console.log('Error deleting transaction from Firebase: ', error);
-      });
-  }
+  
   
 
   render() {
@@ -155,10 +148,10 @@ class Tracker extends Component {
             Sign Out
           </button>
           <button
-            className="delete"
+            className="exit"
             onClick={this.deleteAllTransactionsFromFirebase}
           >
-            Delete All Transactions from Firebase
+            Delete All
           </button>
         </div>
         <div className="totalMoney">₹{this.state.money}</div>
@@ -178,7 +171,7 @@ class Tracker extends Component {
                   <label htmlFor="date">Date:</label>
                   <input
                     type="date"
-                    id="date"
+                    id="indate"
                     name="date"
                     value={this.state.transactionDate}
                     onChange={this.handleChange("transactionDate")}
@@ -206,6 +199,7 @@ class Tracker extends Component {
             <button
               onClick={() => this.addNewTransaction()}
               className="addTransaction"
+              style={{marginTop: '20px'}}
             >
               + Add Transaction
             </button>

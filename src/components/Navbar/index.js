@@ -7,7 +7,7 @@ export default function Navbar()
     return (
         <nav className="navigation">
         <a href="/" className="brand-name">
-          ExpenseEdge
+          <b>ExpenseEdge</b>
         </a>
         <button className={`hamburger ${isNavExpanded ? "expanded" : ""}`}
         onClick={() => {

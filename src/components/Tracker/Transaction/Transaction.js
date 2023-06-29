@@ -8,7 +8,7 @@ const Transaction = props => {
         <li>
             <div>💰 {props.name}</div>
             <div className="uid">{props.user_id}</div>
-            <div className="date">{props.transactionDate}</div>
+            <div className="date">{props.date}</div>
             
             <div>{props.type === 'deposit' ? (
                 <span className="deposit"> + ₹{props.price} 📈</span>
