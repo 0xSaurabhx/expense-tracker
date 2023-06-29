@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import fire from '../../config/Fire';
+import { FaEyeSlash,FaEye } from 'react-icons/fa';
 import './Reg.css';
 
 class Register extends Component {
@@ -25,7 +26,7 @@ class Register extends Component {
     }
 
     toggleShowPassword = event => {
-        event.preventDefault();
+        event.preventDefault()
         this.setState(prevState => ({
             showPassword: !prevState.showPassword
         }));
@@ -69,10 +70,11 @@ class Register extends Component {
                         name="password"
                         type={showPassword ? 'text' : 'password'}
                     />
-                    <button className="showPasswordBtn" onClick={this.toggleShowPassword}>
-                            {showPassword ? 'Hide' : 'Show'}
+                <button className="showPasswordBtn" onClick={this.toggleShowPassword}>
+                            {showPassword ? <FaEyeSlash/> : <FaEye/>}
                         </button>
-                        </div>
+                    
+                </div>
                     <input className="submitBtn" type="submit" onClick={this.register} value="REGISTER" />
                 </form>
             </>
