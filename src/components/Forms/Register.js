@@ -24,7 +24,8 @@ class Register extends Component {
         });
     }
 
-    toggleShowPassword = () => {
+    toggleShowPassword = event => {
+        event.preventDefault();
         this.setState(prevState => ({
             showPassword: !prevState.showPassword
         }));
